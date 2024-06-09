@@ -1,6 +1,9 @@
 -- PLUGINS
 lvim.plugins = {
   {
+    "EdenEast/nightfox.nvim",
+  },
+  {
     "folke/trouble.nvim",
     opts = {
       highlight_hovered_item = true,

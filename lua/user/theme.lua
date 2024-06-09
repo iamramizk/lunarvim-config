@@ -1,6 +1,7 @@
 -- THEME
 lvim.transparent_window = true
 lvim.icons.ui.Circle = " ●"
+lvim.colorscheme = "nightfox"
 
 -- Minimap
 vim.api.nvim_create_autocmd("BufEnter", {
