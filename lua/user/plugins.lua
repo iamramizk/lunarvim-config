@@ -1,20 +1,21 @@
 -- PLUGINS
 lvim.plugins = {
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000
-  },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "EdenEast/nightfox.nvim"
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000
+  -- },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  -- {
+  --   "EdenEast/nightfox.nvim"
+  -- },
   {
     "folke/trouble.nvim",
+    lazy = true,
     opts = {
       highlight_hovered_item = true,
       show_guides = true,
@@ -47,18 +48,19 @@ lvim.plugins = {
       },
     },
   },
-  {
-    'wfxr/minimap.vim',
-    build = "cargo install --locked code-minimap",
-    cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
-    config = function()
-      vim.cmd("let g:minimap_width = 7")
-      vim.cmd("let g:minimap_auto_start = 1")
-      vim.cmd("let g:minimap_auto_start_win_enter = 1")
-    end,
-  },
+  -- {
+  --   'wfxr/minimap.vim',
+  --   build = "cargo install --locked code-minimap",
+  --   cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
+  --   config = function()
+  --     vim.cmd("let g:minimap_width = 7")
+  --     vim.cmd("let g:minimap_auto_start = 1")
+  --     vim.cmd("let g:minimap_auto_start_win_enter = 1")
+  --   end,
+  -- },
   {
     "phaazon/hop.nvim",
+    lazy = true,
     event = "BufRead",
     -- branch = 'v2', -- optional but strongly recommended
     config = function()
@@ -67,6 +69,7 @@ lvim.plugins = {
   },
   {
     "karb94/neoscroll.nvim",
+    lazy = true,
     event = "WinScrolled",
     config = function()
       require('neoscroll').setup({

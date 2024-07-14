@@ -16,7 +16,7 @@ lvim.keys.normal_mode["<esc>"] = ""
 
 
 lvim.builtin.which_key.mappings["c"] = { "<C-W>c", "Close Window" }
-lvim.builtin.which_key.mappings["m"] = { "<cmd>MinimapToggle<cr>", "MiniMap Toggle" }
+-- lvim.builtin.which_key.mappings["m"] = { "<cmd>MinimapToggle<cr>", "MiniMap Toggle" }
 lvim.builtin.which_key.mappings["y"] = { ":let @+=expand('%:p')<cr>", "Yank Filepath" }
 lvim.builtin.which_key.mappings["h"] = { ":noh<CR>", "No Highlight" }
 
