@@ -7,3 +7,5 @@ vim.opt.wrap = true
 vim.opt.cmdheight = 1
 vim.opt.mouse = "nvi"
 vim.diagnostic.config({ virtual_text = false })
+
+lvim.builtin.bufferline.active = false

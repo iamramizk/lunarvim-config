@@ -1,4 +1,5 @@
 reload("user.alpha")
+reload("user.statusline")
 reload("user.keymaps")
 reload("user.lsp")
 reload("user.nvimtree")
