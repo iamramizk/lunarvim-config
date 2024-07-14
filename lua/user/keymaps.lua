@@ -1,9 +1,11 @@
+-- remove highlight on esc in normal mode
+vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR><Esc>', { noremap = true, silent = true })
+vim.cmd("nnoremap ' \"_")
+
 lvim.leader = "space"
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["//"] = ":Telescope current_buffer_fuzzy_find<CR>"
 
-vim.cmd("nnoremap ' \"_")
-lvim.keys.normal_mode["<S-D>"] = ":t.<cr>"
 -- lvim.keys.normal_mode["<S-L>"] = ":BufferLineCycleNext<cr>"
 -- lvim.keys.normal_mode["<C-L>"] = ":BufferLinePick<cr>"
 -- lvim.keys.normal_mode["<S-X>"] = ":BufferKill<cr>"
@@ -53,5 +55,5 @@ lvim.keys.normal_mode = {
   ["<S-x>"] = "<C-w>c",
 }
 
--- remove highlight on esc in normal mode
-vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR><Esc>', { noremap = true, silent = true })
+
+lvim.keys.normal_mode["<S-D>"] = ":t.<cr>"

@@ -18,10 +18,16 @@ lvim.builtin.telescope.defaults = {
     }
   },
   layout_strategy = 'vertical',
+  -- prompt_prefix = " > ",
+  file_ignore_patterns = {
+    ".venv",
+    "venv",
+    ".git"
+  },
 }
 
 
-lvim.builtin.telescope.defaults.prompt_prefix = " > "
+-- lvim.builtin.telescope.defaults.prompt_prefix = " > "
 -- lvim.builtin.telescope.extensions.fzf = nil
 
 lvim.builtin.project.detection_methods = { "lsp" }
