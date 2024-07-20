@@ -57,4 +57,4 @@ lvim.keys.normal_mode = {
 
 
 lvim.keys.normal_mode["<S-D>"] = ":t.<cr>"
-lvim.builtin.which_key.mappings["r"] = { ":ReloadAndRestartLsp<CR>", "Reload" }
+lvim.builtin.which_key.mappings["r"] = { ":SaveReloadAndRestartLsp<CR>", "Reload" }
