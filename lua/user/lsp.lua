@@ -2,9 +2,14 @@
 lvim.format_on_save = true
 lvim.lsp.installer.setup.automatic_servers_installation = true
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "ruff_lsp" })
-vim.list_extend(lvim.linters.automatic_configuration.skipped_servers, { "ruff" })
-vim.list_extend(lvim.formatters.automatic_configuration.skipped_servers, { "ruff" })
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "ruff_lsp" })
+-- vim.list_extend(lvim.linters.automatic_configuration.skipped_servers, { "ruff" })
+-- vim.list_extend(lvim.formatters.automatic_configuration.skipped_servers, { "ruff" })
+--
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+--   return server ~= "ruff_lsp"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 
 lvim.builtin.treesitter.ensure_installed = {
@@ -19,7 +24,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
-  "markdown"
+  "markdown",
 }
 
 -- Pyright settings
@@ -47,7 +52,15 @@ require("lvim.lsp.manager").setup("pyright", pyright_opts)
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { name = "black" },
+  -- { name = "black" },
+  {
+    name = "ruff_format",
+    filetypes = "python",
+  },
+  {
+    name = "shfmt",
+    filetypes = { "sh", "bash", "zsh" }
+  },
   {
     name = "prettier",
     ---@usage arguments to pass to the formatter
@@ -62,6 +75,10 @@ formatters.setup {
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   -- { name = "flake8" },
+  -- {
+  --   name = "ruff_lsp",
+  --   filetypes = "python",
+  -- },
   {
     name = "shellcheck",
     args = { "--severity", "warning" },
