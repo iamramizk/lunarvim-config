@@ -1,18 +1,23 @@
 -- PLUGINS
 lvim.plugins = {
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   priority = 1000
-  -- },
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  -- },
-  -- {
-  --   "EdenEast/nightfox.nvim"
-  -- },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({
+        -- Leave this empty to disable automatic attachment
+      }, {
+        RGB      = true,         -- #RGB hex codes
+        RRGGBB   = true,         -- #RRGGBB hex codes
+        names    = true,         -- "Name" codes like Blue
+        RRGGBBAA = false,        -- #RRGGBBAA hex codes
+        rgb_fn   = true,         -- CSS rgb() and rgba() functions
+        hsl_fn   = true,         -- CSS hsl() and hsla() functions
+        css      = false,        -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn   = false,        -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        mode     = 'background', -- Set the display mode.
+      })
+    end
+  },
   {
     "folke/trouble.nvim",
     lazy = true,
@@ -62,7 +67,7 @@ lvim.plugins = {
     "phaazon/hop.nvim",
     lazy = true,
     event = "BufRead",
-    -- branch = 'v2', -- optional but strongly recommended
+    branch = 'v2', -- optional but strongly recommended
     config = function()
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
